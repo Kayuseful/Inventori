@@ -1,7 +1,7 @@
 import { useParams, useHistory } from "react-router-dom";
 import { useState } from "react";
 import ErrorMsg from "./ErrorMsg";
-import SuccessMsg from "./SuccessMsg";
+
 const DeleteItem = ()=>{
     const {id} = useParams();
     const hist = useHistory();

@@ -16,7 +16,7 @@ function Main(){
                 .then(data=>{
                     setItems(data);
                     setIsPending(false); 
-                    console.log(data)
+                    //console.log(data)
                 })
                 .catch(err=>{
                     if(err.name==='Abort Error'){
@@ -24,7 +24,7 @@ function Main(){
                     }else{
                         setErrMsg(err.message);
                         setIsPending(false);
-                        console.log(err);
+                        //console.log(err);
                     }
                 })
                 return ()=>controller.abort;
@@ -39,12 +39,12 @@ function Main(){
             <table>
                 <thead>
                     <tr>
-                        <td style={{'width':'5%'}}>ID</td>
-                        <td style={{'width':'25%'}}>Name</td>
-                        <td style={{'width':'25%'}}>Description</td>
-                        <td style={{'width':'15%'}}>Date</td>
-                        <td style={{'width':'15%'}}>Edit</td>
-                        <td>Del</td>
+                        <th style={{'width':'5%'}}>ID</th>
+                        <th style={{'width':'25%'}}>Name</th>
+                        <th style={{'width':'35%'}}>Description</th>
+                        <th style={{'width':'15%'}}>Date</th>
+                        <th style={{'width':'5%'}}>Edit</th>
+                        <th>Del</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,15 +52,16 @@ function Main(){
                         items.map((item, i)=>{
                             return (
                                 <tr key={item.id} id={"row_"+item.id}>
-                                    <td>{i+1}</td>
+                                    <td className='center'>{i+1}</td>
                                     <td> {item.name} </td>
                                     <td> {item.desc} </td>
                                     <td> {item.date} </td>
-                                    <td>
-                                    <Link to={"/UpdateItem/"+item.id}>Edit</Link>
+                                    <td className='center'>
+                                    <Link to={"/UpdateItem/"+item.id}><span className="material-icons md-24">edit</span></Link>
                                     </td>
-                                    <td>
-                                        <Link to={"/DeleteItem/"+item.id}>Delete</Link>    
+                                    <td className='center'>
+                                        <Link to={"/DeleteItem/"+item.id}><span className="material-icons md-24">
+delete</span></Link>    
                                     </td>
 
                                 </tr>
@@ -76,12 +77,7 @@ function Main(){
                 Corporis ipsum beatae amet hic. Maiores delectus expedita, maxime totam, sunt quam quos dolore, deleniti accusantium officiis unde itaque vitae ut exercitationem accusamus! Maxime, dicta veniam ullam veritatis rem culpa!
                 Pariatur minima magni sit sapiente et debitis labore nesciunt fugit quasi quisquam beatae, totam repellendus, aspernatur tempora nobis, voluptas impedit eligendi voluptatum? Id natus quae ea ratione, quos ipsam officiis.
             </p>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis inventore cupiditate quibusdam dolorem illo, eos eum minima accusamus laboriosam quisquam vero aut eveniet? Nesciunt cumque quos quam quasi maxime provident?
-                Optio nesciunt ex quam minima. Suscipit impedit minus id omnis incidunt, officiis fugit consectetur voluptatibus doloremque reprehenderit modi porro, excepturi perferendis libero consequuntur eligendi sit quas nobis? Odio, hic quam.
-                Aspernatur quas esse nostrum dicta excepturi necessitatibus quos nesciunt harum quibusdam molestiae, suscipit pariatur exercitationem officia maxime nihil perferendis corrupti rerum vitae optio totam accusamus. Architecto rerum est rem alias.
-                Alias ipsum suscipit at ea, laudantium rerum architecto laborum minus numquam ullam, iste ab porro in voluptates omnis cupiditate quos beatae dolorum! Alias omnis, hic ea praesentium quisquam facilis enim.
-            </p>
+
         </div>
     )
 }

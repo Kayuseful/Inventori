@@ -27,7 +27,7 @@ function UpdateItem(){
                     setDesc(data.desc);
                     setDate(data.date);
                     setIsPending(false); 
-                    console.log(data)
+                    //console.log(data)
                 })
                 .catch(err=>{
                     if(err.name==='Abort Error'){
@@ -35,7 +35,7 @@ function UpdateItem(){
                     }else{
                         setErrMsg(err.message);
                         setIsPending(false);
-                        console.log(err);
+                        //console.log(err);
                     }
                 })
                 return ()=>controller.abort;
@@ -56,7 +56,7 @@ function UpdateItem(){
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({name, desc, date})
         })
-        .then(res=>{console.log(res);
+        .then(res=>{//console.log(res);
             if(!res.ok){
                 setErrMsg(res.statusText);
                 setIsPending(false);
@@ -65,7 +65,7 @@ function UpdateItem(){
             return res.json()
         })
         .then(res=>{
-            console.log(res); 
+            //console.log(res); 
             setSuccessMsg('Success updating ['+res.name+']');
             setIsPending(false);
             setErrMsg('');
@@ -76,7 +76,7 @@ function UpdateItem(){
             setErrMsg(err.message);
             setSuccessMsg('');
             setIsPending(false);
-            console.log(err);
+            //console.log(err);
         })
 
 
@@ -89,7 +89,7 @@ function UpdateItem(){
                 <h2>Edit Item - {name}</h2>
                 {errMsg && <ErrorMsg msg={errMsg} />}
                 {successMsg && <SuccessMsg msg={successMsg} />}
-                {successMsg && <Link to="/" className='back'> &larr; Back</Link>}
+                {successMsg && <Link to="/" className='back'> <span className="material-icons">arrow_back</span> Back</Link>}
                 <div className="form-control">
                     <label>Name</label>
                     <input required name="name" value={name} 

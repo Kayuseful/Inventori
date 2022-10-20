@@ -8,23 +8,26 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-title{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display:inline;
+  font-size: larger;
 }
+.navbar .app-title{color: white; font-size: x-large;}
 
-
-.App-link {
-  color: #61dafb;
-}
 
 header, footer {
   background-color: rgb(150, 0, 0);
+  font-size: larger;
+  font-weight: bolder;
   color:rgba(250, 250, 250, 1);
   margin-top: 5px;
   margin-bottom: 5px;
+
+}
+
+.main, .about, .create-item, .not-found {
+  margin: 10px;
   padding: 10px;
 }
 
@@ -44,27 +47,25 @@ footer{
 }
 .navbar ul{
   list-style-type: none;
+  display: inline;
 }
 .navbar li{
   display: inline;
-
 }
-.navbar li:hover, .navbar li:focus{
+.navbar a:hover, .navbar a:focus{
   background-color: rgba(50, 0, 0, 1);
-
-
 }
 .navbar a{
   color: rgba(250, 250, 250, 1);
   text-decoration: none;
   display: inline-block;
   width: 20%;
-  padding: 10px auto;
-
+  height: 2rem;
 
 }
 h1, h2, h3 {
   color:rgb(150, 0, 0);
+  text-align: center;
 }
 form {
   margin: 10px;
@@ -75,6 +76,9 @@ form {
 form h2 {
   text-align: center;
 }
+input:required:invalid {
+  border-color: red;
+}
 .form-control {
   display: block;
   width: 80%;
@@ -82,12 +86,23 @@ form h2 {
 }
 .form-control label {
   display: block;
+  font-weight: bolder;
+  font-size: larger;
 }
 .form-control input, .form-control button, .form-control textarea {
   min-width: 90%;
   background-color: rgb(245, 225, 225);
   border: 1px solid black;
   height: 2em;
+}
+.form-control button {
+  border-radius: 4px;
+  font-size: larger;
+  border: 2px outset black;
+}
+.form-control button:hover {
+  font-weight: bolder;
+  border:4px outset black;
 }
 .form-control textarea {
   height: 15ch;
@@ -99,6 +114,8 @@ table {
   width: 95%;
   margin: 10px auto;
   padding: 10px;
+  border-collapse: collapse;
+  display: block;
 }
 tr {
   border-bottom: 1px solid rgb(150, 0, 0);
@@ -109,9 +126,13 @@ table tr:nth-child(odd){
 }
 thead {
   font-weight: bolder;
-  color: rgb(150, 0, 0);
+  color: white;
   text-align: center;
   text-transform: uppercase;
+  height: 2rem;
+}
+th{
+  background-color: rgb(150, 0, 0);
 }
 
 .lds-ring {
@@ -206,6 +227,24 @@ a.back {
   font-weight: bolder;
   background-color: rgba(50, 0, 0, 1);
 }
-a span.btn{
 
+.center {
+  text-align: center;
 }
+
+.material-icons {
+  color: rgb(150, 0, 0);
+}
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

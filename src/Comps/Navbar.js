@@ -3,21 +3,18 @@ import {Link} from 'react-router-dom';
 function Navbar(){
     return(
         <div className="navbar">
+            <div className='app-title'>
+                <Link to="/">Inventori</Link>
+            </div>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <Link to="/"><span className="material-icons md-light">home</span>Home</Link>
                 </li>
                 <li>
-                    <Link to="/CreateUser">CreateUser</Link>
+                    <Link to="/CreateItem"><span className="material-icons md-light">add_circle</span>Add Items</Link>
                 </li>
                 <li>
-                    <Link to="/CreateItem">CreateItem</Link>
-                </li>
-                <li>
-                    <a href="/">Inv Mgt</a>
-                </li>
-                <li>
-                    <a href="/">About us</a>
+                    <Link to="/About"><span className="material-icons md-light">help</span>About us</Link>
                 </li>
             </ul>
         </div>
