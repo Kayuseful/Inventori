@@ -28,7 +28,8 @@ function App() {
       </Router>
 
       <footer>
-        (c) 2022
+        ..a store API app to save your items<br/>
+        &copy; 2022
 
       </footer>
     </div>

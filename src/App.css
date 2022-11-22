@@ -15,28 +15,41 @@ body {
 }
 .navbar .app-title{color: white; font-size: x-large;}
 
+#root{
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 header, footer {
   background-color: rgb(150, 0, 0);
-  font-size: larger;
   font-weight: bolder;
   color:rgba(250, 250, 250, 1);
   margin-top: 5px;
   margin-bottom: 5px;
+  box-shadow: 2px 2px 5px gray;
+ 
 
 }
-
-.main, .about, .create-item, .not-found {
-  margin: 10px;
-  padding: 10px;
+header{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  font-size: larger;
 }
 
 footer{
   position: relative;
   bottom: 0;
   text-align: center;
+  font-size: smaller;
 
 }
+.main, .about, .create-item, .not-found {
+  margin: 10px;
+  padding: 10px;
+  min-height: 100vh;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -71,7 +84,7 @@ form {
   margin: 10px;
   padding: 10px;
   background-color: rgba(50, 0, 0, 0.2);
-  border-radius: 5%;
+  border-radius: 10px;
 }
 form h2 {
   text-align: center;
@@ -115,7 +128,6 @@ table {
   margin: 10px auto;
   padding: 10px;
   border-collapse: collapse;
-  display: block;
 }
 tr {
   border-bottom: 1px solid rgb(150, 0, 0);
