@@ -7,5 +7,8 @@
 
  
     Hope you enjoy my <span className="app-title">Inventori</span>
+    
+    view on netlify
+    https://super-biscotti-5d4646.netlify.app/
       
             
