@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Loading from './Loading';
 function Main(){
     const url = 'https://63342852433198e79dd14ed8.mockapi.io/inv';
-    const [items, setItems] = useState([{'name':'dummy', 'desc':'', 'date':'','id':0}]);
+    const [items, setItems] = useState([{'name':'', 'desc':'', 'date':'','id':0}]);
     const [errMsg, setErrMsg] = useState('');
     const [isPending, setIsPending] = useState(true);
 
@@ -36,41 +36,42 @@ function Main(){
             <h2>Items in store</h2>
             {isPending && <Loading /> }
             <h3> {errMsg} </h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th style={{'width':'5%'}}>ID</th>
-                        <th style={{'width':'25%'}}>Name</th>
-                        <th style={{'width':'35%'}}>Description</th>
-                        <th style={{'width':'15%'}}>Date</th>
-                        <th style={{'width':'5%'}}>Edit</th>
-                        <th>Del</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        items.map((item, i)=>{
-                            return (
-                                <tr key={item.id} id={"row_"+item.id}>
-                                    <td className='center'>{i+1}</td>
-                                    <td> {item.name} </td>
-                                    <td> {item.desc} </td>
-                                    <td> {item.date} </td>
-                                    <td className='center'>
-                                    <Link to={"/UpdateItem/"+item.id}><span className="material-icons md-24">edit</span></Link>
-                                    </td>
-                                    <td className='center'>
-                                        <Link to={"/DeleteItem/"+item.id}><span className="material-icons md-24">
-delete</span></Link>    
-                                    </td>
 
-                                </tr>
-                            )
-                        })
-                    }
+                <table>
+                    <thead>
+                        <tr>
+                            <th style={{'width':'5%'}}>ID</th>
+                            <th style={{'width':'25%'}}>Name</th>
+                            <th style={{'width':'35%'}}>Description</th>
+                            <th style={{'width':'15%'}}>Date</th>
+                            <th style={{'width':'5%'}}>Edit</th>
+                            <th>Del</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            items.map((item, i)=>{
+                                return (
+                                    <tr key={item.id} id={"row_"+item.id}>
+                                        <td className='center'>{i+1}</td>
+                                        <td> {item.name} </td>
+                                        <td> {item.desc} </td>
+                                        <td> {item.date} </td>
+                                        <td className='center'>
+                                        <Link to={"/UpdateItem/"+item.id}><span className="material-icons md-24">edit</span></Link>
+                                        </td>
+                                        <td className='center'>
+                                            <Link to={"/DeleteItem/"+item.id}><span className="material-icons md-24">
+    delete</span></Link>    
+                                        </td>
 
-                </tbody>
-            </table>
+                                    </tr>
+                                )
+                            })
+                        }
+
+                    </tbody>
+                </table>
 
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam quidem numquam rem voluptas commodi beatae, nesciunt ea aut odio quos natus id officiis fugiat non ratione, rerum vel quaerat aliquid.
